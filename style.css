@@ -69,12 +69,12 @@ section {
 @media (min-width: 768px) {
   #services {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    overflow-x: auto;
   }
 
   .service-card {
-    width: calc(25% - 20px);
+    width: 250px;
     margin: 10px;
+    flex-shrink: 0;
   }
 }
