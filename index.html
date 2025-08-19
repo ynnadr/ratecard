@@ -1,86 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Ganti lang ke "id" -->
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rate Card</title>
+  <!-- Tambahkan meta description untuk SEO -->
+  <meta name="description" content="Rate card layanan pengembangan web, termasuk pembuatan website statis, aplikasi dinamis, desain UI/UX, dan maintenance.">
+  <title>Rate Card - Jasa Web Developer Profesional</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Menggunakan Font Awesome versi 6 untuk ikon yang lebih modern -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>Rate Card</h1>
+    <h1>Rate Card Web Developer</h1>
   </header>
   <main>
     <section id="services">
-      <h2>Layanan</h2>
-      <div class="service-card">
-        <h3>Pembuatan Website Statis</h3>
-        <p>Rp 2.000.000 - Rp 5.000.000</p>
-        <button class="read-more">Baca Selengkapnya</button>
-        <div class="description">
-          <p>Pembuatan website statis adalah proses pembuatan website yang tidak memerlukan database dan hanya menampilkan konten statis.</p>
-          <ul>
-            <li>Desain website yang responsif dan modern</li>
-            <li>Integrasi dengan teknologi web terbaru</li>
-            <li>Pengujian dan debugging website</li>
-          </ul>
-          <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Website Statis">
-            <i class="fa fa-whatsapp"></i> Hubungi Kami
-          </a>
+      <h2>Layanan Kami</h2>
+      <!-- BARU: Tambahkan div container untuk layout desktop -->
+      <div class="service-card-container">
+        <div class="service-card">
+          <h3>Website Statis</h3>
+          <p class="price">Rp 2.000.000 - Rp 5.000.000</p>
+          <div class="description">
+            <p>Website informasional yang cepat dan aman, cocok untuk profil perusahaan, portofolio, atau landing page.</p>
+            <ul>
+              <li>Desain responsif dan modern</li>
+              <li>Hosting & domain (opsional)</li>
+              <li>Optimasi kecepatan dasar</li>
+            </ul>
+            <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Website Statis">
+              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </div>
+          <button class="read-more">Baca Selengkapnya</button>
         </div>
-      </div>
-      <div class="service-card">
-        <h3>Pembuatan Aplikasi Web Dinamis</h3>
-        <p>Rp 5.000.000 - Rp 20.000.000</p>
-        <button class="read-more">Baca Selengkapnya</button>
-        <div class="description">
-          <p>Pembuatan aplikasi web dinamis adalah proses pembuatan aplikasi web yang memerlukan database dan dapat menampilkan konten dinamis.</p>
-          <ul>
-            <li>Desain aplikasi web yang responsif dan modern</li>
-            <li>Integrasi dengan teknologi web terbaru</li>
-            <li>Pengujian dan debugging aplikasi web</li>
-            <li>Pengembangan fitur-fitur aplikasi web</li>
-          </ul>
-          <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Aplikasi Web Dinamis">
-            <i class="fa fa-whatsapp"></i> Hubungi Kami
-          </a>
+
+        <div class="service-card">
+          <h3>Aplikasi Web Dinamis</h3>
+          <p class="price">Rp 5.000.000 - Rp 20.000.000</p>
+          <div class="description">
+            <p>Aplikasi dengan database dan konten yang dapat di-update, seperti toko online, sistem manajemen, atau blog.</p>
+            <ul>
+              <li>Desain responsif & modern</li>
+              <li>Fitur custom sesuai kebutuhan</li>
+              <li>Panel admin untuk manajemen konten</li>
+              <li>Integrasi database</li>
+            </ul>
+            <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Aplikasi Web Dinamis">
+              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </div>
+          <button class="read-more">Baca Selengkapnya</button>
         </div>
-      </div>
-      <div class="service-card">
-        <h3>Desain UI/UX</h3>
-        <p>Rp 1.500.000 - Rp 3.000.000</p>
-        <button class="read-more">Baca Selengkapnya</button>
-        <div class="description">
-          <p>Desain UI/UX adalah proses pembuatan desain antarmuka pengguna yang mudah digunakan dan menarik.</p>
-          <ul>
-            <li>Desain antarmuka pengguna yang responsif dan modern</li>
-            <li>Pengembangan pengalaman pengguna yang baik</li>
-            <li>Pengujian dan debugging desain</li>
-          </ul>
-          <a href="#" class="whatsapp-btn" data-layanan="Desain UI/UX">
-            <i class="fa fa-whatsapp"></i> Hubungi Kami
-          </a>
+
+        <div class="service-card">
+          <h3>Desain UI/UX</h3>
+          <p class="price">Rp 1.500.000 - Rp 3.000.000</p>
+          <div class="description">
+            <p>Desain antarmuka yang intuitif dan menarik untuk memastikan pengalaman pengguna yang terbaik.</p>
+            <ul>
+              <li>Wireframing dan prototyping</li>
+              <li>Desain high-fidelity</li>
+              <li>User flow & journey mapping</li>
+            </ul>
+            <a href="#" class="whatsapp-btn" data-layanan="Desain UI/UX">
+              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </div>
+          <button class="read-more">Baca Selengkapnya</button>
         </div>
-      </div>
-      <div class="service-card">
-        <h3>Maintenance dan Update Website</h3>
-        <p>Rp 500.000 - Rp 2.000.000 per bulan</p>
-        <button class="read-more">Baca Selengkapnya</button>
-        <div class="description">
-          <p>Maintenance dan update website adalah proses pemeliharaan dan pembaruan website yang sudah ada.</p>
-          <ul>
-            <li>Pengujian dan debugging website</li>
-            <li>Pembaruan konten website</li>
-            <li>Pengamanan website dari serangan</li>
-          </ul>
-          <a href="#" class="whatsapp-btn" data-layanan="Maintenance dan Update Website">
-            <i class="fa fa-whatsapp"></i> Hubungi Kami
-          </a>
+
+        <div class="service-card">
+          <h3>Maintenance Website</h3>
+          <p class="price">Rp 500.000 - Rp 2.000.000 / bulan</p>
+          <div class="description">
+            <p>Jaga website Anda tetap aman, cepat, dan ter-update dengan layanan pemeliharaan rutin.</p>
+            <ul>
+              <li>Update rutin & backup data</li>
+              <li>Monitoring keamanan</li>
+              <li>Perbaikan bug & error</li>
+            </ul>
+            <a href="#" class="whatsapp-btn" data-layanan="Maintenance dan Update Website">
+              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </div>
+          <button class="read-more">Baca Selengkapnya</button>
         </div>
       </div>
     </section>
   </main>
+  <!-- BARU: Tambahkan footer -->
+  <footer>
+    <p>&copy; 2025 Nama Anda. Seluruh Hak Cipta.</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
