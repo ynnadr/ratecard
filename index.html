@@ -1,99 +1,111 @@
 <!DOCTYPE html>
-<!-- Ganti lang ke "id" -->
-<html lang="id">
+<!-- Default bahasa diatur ke Inggris (en) -->
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tambahkan meta description untuk SEO -->
-  <meta name="description" content="Rate card layanan pengembangan web, termasuk pembuatan website statis, aplikasi dinamis, desain UI/UX, dan maintenance.">
-  <title>Rate Card - Jasa Web Developer Profesional</title>
+  <meta name="description" content="Rate card for web development services, including static websites, dynamic web applications, UI/UX design, and maintenance.">
+  
+  <!-- BARU: Import font Poppins dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <title>Rate Card - Professional Web Developer Services</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Menggunakan Font Awesome versi 6 untuk ikon yang lebih modern -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>Rate Card Web Developer</h1>
+    <!-- BARU: Tambahkan div untuk pengalih bahasa -->
+    <div id="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="id">ID</button>
+    </div>
+    <h1 data-en="Web Developer Rate Card" data-id="Rate Card Web Developer">Web Developer Rate Card</h1>
   </header>
   <main>
     <section id="services">
-      <h2>Layanan Kami</h2>
-      <!-- BARU: Tambahkan div container untuk layout desktop -->
+      <h2 data-en="Our Services" data-id="Layanan Kami">Our Services</h2>
       <div class="service-card-container">
+        <!-- Kartu 1: Website Statis -->
         <div class="service-card">
-          <h3>Website Statis</h3>
+          <h3 data-en="Static Website" data-id="Website Statis">Static Website</h3>
           <p class="price">Rp 2.000.000 - Rp 5.000.000</p>
           <div class="description">
-            <p>Website informasional yang cepat dan aman, cocok untuk profil perusahaan, portofolio, atau landing page.</p>
+            <p data-en="Fast and secure informational websites, perfect for company profiles, portfolios, or landing pages." data-id="Website informasional yang cepat dan aman, cocok untuk profil perusahaan, portofolio, atau landing page.">Fast and secure informational websites, perfect for company profiles, portfolios, or landing pages.</p>
             <ul>
-              <li>Desain responsif dan modern</li>
-              <li>Hosting & domain (opsional)</li>
-              <li>Optimasi kecepatan dasar</li>
+              <li data-en="Responsive and modern design" data-id="Desain responsif dan modern">Responsive and modern design</li>
+              <li data-en="Hosting & domain (optional)" data-id="Hosting & domain (opsional)">Hosting & domain (optional)</li>
+              <li data-en="Basic speed optimization" data-id="Optimasi kecepatan dasar">Basic speed optimization</li>
             </ul>
-            <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Website Statis">
-              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            <a href="#" class="whatsapp-btn" data-layanan-en="Static Website Development" data-layanan-id="Pembuatan Website Statis">
+              <i class="fa-brands fa-whatsapp"></i> <span data-en="Contact Us" data-id="Hubungi Kami">Contact Us</span>
             </a>
           </div>
-          <button class="read-more">Baca Selengkapnya</button>
+          <button class="read-more" data-en-read="Read More" data-en-close="Close" data-id-read="Baca Selengkapnya" data-id-close="Tutup">Read More</button>
         </div>
 
+        <!-- Kartu 2: Aplikasi Web Dinamis -->
         <div class="service-card">
-          <h3>Aplikasi Web Dinamis</h3>
+          <h3 data-en="Dynamic Web App" data-id="Aplikasi Web Dinamis">Dynamic Web App</h3>
           <p class="price">Rp 5.000.000 - Rp 20.000.000</p>
           <div class="description">
-            <p>Aplikasi dengan database dan konten yang dapat di-update, seperti toko online, sistem manajemen, atau blog.</p>
+            <p data-en="Applications with databases and updatable content, such as e-commerce, management systems, or blogs." data-id="Aplikasi dengan database dan konten yang dapat di-update, seperti toko online, sistem manajemen, atau blog.">Applications with databases and updatable content, such as e-commerce, management systems, or blogs.</p>
             <ul>
-              <li>Desain responsif & modern</li>
-              <li>Fitur custom sesuai kebutuhan</li>
-              <li>Panel admin untuk manajemen konten</li>
-              <li>Integrasi database</li>
+              <li data-en="Responsive & modern design" data-id="Desain responsif & modern">Responsive & modern design</li>
+              <li data-en="Custom features as needed" data-id="Fitur custom sesuai kebutuhan">Custom features as needed</li>
+              <li data-en="Admin panel for content management" data-id="Panel admin untuk manajemen konten">Admin panel for content management</li>
+              <li data-en="Database integration" data-id="Integrasi database">Database integration</li>
             </ul>
-            <a href="#" class="whatsapp-btn" data-layanan="Pembuatan Aplikasi Web Dinamis">
-              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            <a href="#" class="whatsapp-btn" data-layanan-en="Dynamic Web App Development" data-layanan-id="Pembuatan Aplikasi Web Dinamis">
+              <i class="fa-brands fa-whatsapp"></i> <span data-en="Contact Us" data-id="Hubungi Kami">Contact Us</span>
             </a>
           </div>
-          <button class="read-more">Baca Selengkapnya</button>
+          <button class="read-more" data-en-read="Read More" data-en-close="Close" data-id-read="Baca Selengkapnya" data-id-close="Tutup">Read More</button>
         </div>
 
+        <!-- Kartu 3: Desain UI/UX -->
         <div class="service-card">
-          <h3>Desain UI/UX</h3>
+          <h3 data-en="UI/UX Design" data-id="Desain UI/UX">UI/UX Design</h3>
           <p class="price">Rp 1.500.000 - Rp 3.000.000</p>
           <div class="description">
-            <p>Desain antarmuka yang intuitif dan menarik untuk memastikan pengalaman pengguna yang terbaik.</p>
+            <p data-en="Intuitive and engaging interface design to ensure the best user experience." data-id="Desain antarmuka yang intuitif dan menarik untuk memastikan pengalaman pengguna yang terbaik.">Intuitive and engaging interface design to ensure the best user experience.</p>
             <ul>
-              <li>Wireframing dan prototyping</li>
-              <li>Desain high-fidelity</li>
-              <li>User flow & journey mapping</li>
+              <li data-en="Wireframing and prototyping" data-id="Wireframing dan prototyping">Wireframing and prototyping</li>
+              <li data-en="High-fidelity design" data-id="Desain high-fidelity">High-fidelity design</li>
+              <li data-en="User flow & journey mapping" data-id="User flow & journey mapping">User flow & journey mapping</li>
             </ul>
-            <a href="#" class="whatsapp-btn" data-layanan="Desain UI/UX">
-              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            <a href="#" class="whatsapp-btn" data-layanan-en="UI/UX Design" data-layanan-id="Desain UI/UX">
+              <i class="fa-brands fa-whatsapp"></i> <span data-en="Contact Us" data-id="Hubungi Kami">Contact Us</span>
             </a>
           </div>
-          <button class="read-more">Baca Selengkapnya</button>
+          <button class="read-more" data-en-read="Read More" data-en-close="Close" data-id-read="Baca Selengkapnya" data-id-close="Tutup">Read More</button>
         </div>
 
+        <!-- Kartu 4: Maintenance -->
         <div class="service-card">
-          <h3>Maintenance Website</h3>
-          <p class="price">Rp 500.000 - Rp 2.000.000 / bulan</p>
+          <h3 data-en="Website Maintenance" data-id="Maintenance Website">Website Maintenance</h3>
+          <p class="price">Rp 500.000 - Rp 2.000.000 / month</p>
           <div class="description">
-            <p>Jaga website Anda tetap aman, cepat, dan ter-update dengan layanan pemeliharaan rutin.</p>
+            <p data-en="Keep your website secure, fast, and up-to-date with our routine maintenance service." data-id="Jaga website Anda tetap aman, cepat, dan ter-update dengan layanan pemeliharaan rutin.">Keep your website secure, fast, and up-to-date with our routine maintenance service.</p>
             <ul>
-              <li>Update rutin & backup data</li>
-              <li>Monitoring keamanan</li>
-              <li>Perbaikan bug & error</li>
+              <li data-en="Regular updates & data backup" data-id="Update rutin & backup data">Regular updates & data backup</li>
+              <li data-en="Security monitoring" data-id="Monitoring keamanan">Security monitoring</li>
+              <li data-en="Bug and error fixing" data-id="Perbaikan bug & error">Bug and error fixing</li>
             </ul>
-            <a href="#" class="whatsapp-btn" data-layanan="Maintenance dan Update Website">
-              <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            <a href="#" class="whatsapp-btn" data-layanan-en="Website Maintenance" data-layanan-id="Maintenance Website">
+              <i class="fa-brands fa-whatsapp"></i> <span data-en="Contact Us" data-id="Hubungi Kami">Contact Us</span>
             </a>
           </div>
-          <button class="read-more">Baca Selengkapnya</button>
+          <button class="read-more" data-en-read="Read More" data-en-close="Close" data-id-read="Baca Selengkapnya" data-id-close="Tutup">Read More</button>
         </div>
       </div>
     </section>
   </main>
-  <!-- BARU: Tambahkan footer -->
   <footer>
-    <p>&copy; 2025 Nama Anda. Seluruh Hak Cipta.</p>
+    <!-- REVISI: Copyright dalam Bahasa Inggris & nama ynnadr -->
+    <p>&copy; 2025 ynnadr. All Rights Reserved.</p>
   </footer>
   <script src="script.js"></script>
 </body>
