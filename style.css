@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. Root Variables & Body Styles
+   ========================================================================== */
+
 :root {
   --primary-color: #333;
   --primary-color-hover: #444;
@@ -12,7 +16,6 @@
 }
 
 body {
-  /* BARU: Menggunakan font Poppins */
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -20,15 +23,18 @@ body {
   color: var(--primary-color);
 }
 
+/* ==========================================================================
+   2. Header & Language Switcher
+   ========================================================================== */
+
 header {
   background-color: var(--primary-color);
   color: var(--text-color-light);
   padding: 1.5em 1em;
   text-align: center;
-  position: relative; /* Diperlukan untuk positioning switcher */
+  position: relative;
 }
 
-/* BARU: Styling untuk pengalih bahasa */
 #lang-switcher {
   position: absolute;
   top: 15px;
@@ -37,6 +43,7 @@ header {
   background-color: #555;
   border-radius: 5px;
   overflow: hidden;
+  z-index: 10; /* Pastikan di atas semua elemen header */
 }
 
 .lang-btn {
@@ -60,16 +67,59 @@ header {
   color: #fff;
 }
 
+/* ==========================================================================
+   3. Main Content & Services Section
+   ========================================================================== */
+
 main {
-  padding: 2em 1em;
+  /* Tidak perlu padding karena section services akan mengaturnya sendiri */
 }
 
-#services h2 {
-  text-align: center;
-  margin-bottom: 2em;
-  font-size: 2em;
-  font-weight: 700;
+#services {
+  /* Positioning & Padding */
+  position: relative;
+  padding: 4em 1em;
+  
+  /* Background Image Properties */
+  background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
+
+/* Dark Overlay for Readability */
+#services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+/* Positioning Content Above Overlay */
+#services h2,
+#services .service-card-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Styling for Section Title */
+#services h2 {
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2em;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   4. Service Card Styles
+   ========================================================================== */
 
 .service-card-container {
   display: grid;
@@ -80,7 +130,9 @@ main {
 }
 
 .service-card {
+  /* Kartu tetap solid putih agar konten sangat mudah dibaca */
   background-color: #fff;
+  color: var(--primary-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px var(--shadow-color);
@@ -104,9 +156,27 @@ main {
 .service-card .price {
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--primary-color);
   margin-bottom: 1em;
 }
+
+.description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
+  padding: 0 0.5em;
+  border-top: 1px solid transparent; /* Placeholder untuk transisi */
+}
+
+.service-card.is-open .description {
+  max-height: 500px;
+  padding: 1.5em 0.5em;
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 1em;
+}
+
+/* ==========================================================================
+   5. Buttons & Footer
+   ========================================================================== */
 
 .read-more {
   background-color: var(--primary-color);
@@ -115,7 +185,7 @@ main {
   padding: 0.7em 1.2em;
   cursor: pointer;
   border-radius: var(--border-radius);
-  margin-top: auto;
+  margin-top: auto; /* Mendorong tombol ke bawah */
   transition: background-color var(--transition-speed);
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -123,20 +193,6 @@ main {
 
 .read-more:hover {
   background-color: var(--primary-color-hover);
-}
-
-.description {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
-  padding: 0 0.5em;
-}
-
-.service-card.is-open .description {
-  max-height: 500px;
-  padding: 1.5em 0.5em;
-  border-top: 1px solid var(--border-color);
-  margin-bottom: 1em;
 }
 
 .whatsapp-btn {
@@ -159,31 +215,37 @@ main {
 footer {
   text-align: center;
   padding: 2em;
-  margin-top: 2em;
   background-color: var(--primary-color);
-  color: #aaa; /* Warna lebih redup */
+  color: #aaa;
 }
 
-/* REVISI: Ukuran font copyright lebih kecil */
 footer p {
   font-size: 0.9em;
   margin: 0;
 }
 
+/* ==========================================================================
+   6. Media Queries (Responsive Design)
+   ========================================================================== */
+
+/* Untuk layar kecil (ponsel) */
 @media (max-width: 480px) {
   #lang-switcher {
-    position: static;
+    position: static; /* Lepaskan dari pojok kanan */
     margin: 0 auto 1em;
     justify-content: center;
+    width: fit-content;
   }
 }
 
+/* Untuk layar sedang (tablet) */
 @media (min-width: 768px) {
   .service-card-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Untuk layar besar (desktop) */
 @media (min-width: 1024px) {
   .service-card-container {
     grid-template-columns: repeat(4, 1fr);
