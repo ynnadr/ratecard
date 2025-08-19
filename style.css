@@ -1,102 +1,145 @@
+/* BARU: CSS Variables untuk kemudahan maintenance */
+:root {
+  --primary-color: #333;
+  --primary-color-hover: #444;
+  --secondary-color: #f4f4f4;
+  --whatsapp-color: #25D366;
+  --whatsapp-color-hover: #1DA335;
+  --text-color-light: #fff;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 1em;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 1.5em 1em;
   text-align: center;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-}
-
-#services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2em 1em;
 }
 
 #services h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2em;
+  font-size: 2em;
 }
 
+/* BARU: Menggunakan display grid untuk layout yang lebih baik di desktop */
 .service-card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr; /* Default 1 kolom untuk mobile */
+  gap: 20px; /* Jarak antar kartu */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .service-card {
-  width: 100%;
-  margin: 10px 0;
   background-color: #fff;
-  padding: 1em;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .service-card h3 {
   margin-top: 0;
+  font-size: 1.5em;
+}
+
+.service-card .price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1em;
 }
 
 .read-more {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
   border: none;
-  padding: 0.5em 1em;
+  padding: 0.7em 1.2em;
   cursor: pointer;
+  border-radius: var(--border-radius);
+  margin-top: auto; /* Mendorong tombol ke bawah kartu */
+  transition: background-color var(--transition-speed);
 }
 
 .read-more:hover {
-  background-color: #444;
+  background-color: var(--primary-color-hover);
 }
 
+/* PERBAIKAN: Menggunakan sistem kelas untuk menampilkan deskripsi */
 .description {
-  display: none;
-  padding: 1em;
-  border-top: 1px solid #ddd;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
+  padding: 0 0.5em; /* Padding atas bawah 0 saat tertutup */
+}
+
+.service-card.is-open .description {
+  max-height: 500px; /* Tinggi maksimal yang cukup besar */
+  padding: 1.5em 0.5em; /* Padding saat terbuka */
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 1em;
 }
 
 .whatsapp-btn {
-  background-color: #25D366;
-  color: #fff;
+  background-color: var(--whatsapp-color);
+  color: var(--text-color-light);
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex; /* Agar ikon dan teks sejajar */
+  align-items: center;
+  gap: 8px; /* Jarak antara ikon dan teks */
   margin-top: 10px;
+  transition: background-color var(--transition-speed);
 }
 
 .whatsapp-btn:hover {
-  background-color: #1DA335;
+  background-color: var(--whatsapp-color-hover);
 }
 
+footer {
+  text-align: center;
+  padding: 2em;
+  margin-top: 2em;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+/* PERBAIKAN: Media query untuk desktop menggunakan grid */
 @media (min-width: 768px) {
   .service-card-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: center;
-  }
-  .service-card {
-    width: 250px;
-    margin: 10px;
-    flex-shrink: 0;
+    /* 2 kolom untuk tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 767px) {
-  .service-card {
-    margin: 10px 0;
+@media (min-width: 1024px) {
+  .service-card-container {
+    /* 4 kolom untuk desktop besar */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
