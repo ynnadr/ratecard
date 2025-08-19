@@ -1,4 +1,3 @@
-/* BARU: CSS Variables untuk kemudahan maintenance */
 :root {
   --primary-color: #333;
   --primary-color-hover: #444;
@@ -13,7 +12,8 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /* BARU: Menggunakan font Poppins */
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--secondary-color);
@@ -25,6 +25,39 @@ header {
   color: var(--text-color-light);
   padding: 1.5em 1em;
   text-align: center;
+  position: relative; /* Diperlukan untuk positioning switcher */
+}
+
+/* BARU: Styling untuk pengalih bahasa */
+#lang-switcher {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  background-color: #555;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  color: #ccc;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.lang-btn:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.lang-btn.active {
+  background-color: var(--whatsapp-color);
+  color: #fff;
 }
 
 main {
@@ -35,13 +68,13 @@ main {
   text-align: center;
   margin-bottom: 2em;
   font-size: 2em;
+  font-weight: 700;
 }
 
-/* BARU: Menggunakan display grid untuk layout yang lebih baik di desktop */
 .service-card-container {
   display: grid;
-  grid-template-columns: 1fr; /* Default 1 kolom untuk mobile */
-  gap: 20px; /* Jarak antar kartu */
+  grid-template-columns: 1fr;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -65,6 +98,7 @@ main {
 .service-card h3 {
   margin-top: 0;
   font-size: 1.5em;
+  font-weight: 600;
 }
 
 .service-card .price {
@@ -81,25 +115,26 @@ main {
   padding: 0.7em 1.2em;
   cursor: pointer;
   border-radius: var(--border-radius);
-  margin-top: auto; /* Mendorong tombol ke bawah kartu */
+  margin-top: auto;
   transition: background-color var(--transition-speed);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
 .read-more:hover {
   background-color: var(--primary-color-hover);
 }
 
-/* PERBAIKAN: Menggunakan sistem kelas untuk menampilkan deskripsi */
 .description {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
-  padding: 0 0.5em; /* Padding atas bawah 0 saat tertutup */
+  padding: 0 0.5em;
 }
 
 .service-card.is-open .description {
-  max-height: 500px; /* Tinggi maksimal yang cukup besar */
-  padding: 1.5em 0.5em; /* Padding saat terbuka */
+  max-height: 500px;
+  padding: 1.5em 0.5em;
   border-top: 1px solid var(--border-color);
   margin-bottom: 1em;
 }
@@ -110,9 +145,9 @@ main {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  display: inline-flex; /* Agar ikon dan teks sejajar */
+  display: inline-flex;
   align-items: center;
-  gap: 8px; /* Jarak antara ikon dan teks */
+  gap: 8px;
   margin-top: 10px;
   transition: background-color var(--transition-speed);
 }
@@ -126,20 +161,31 @@ footer {
   padding: 2em;
   margin-top: 2em;
   background-color: var(--primary-color);
-  color: var(--text-color-light);
+  color: #aaa; /* Warna lebih redup */
 }
 
-/* PERBAIKAN: Media query untuk desktop menggunakan grid */
+/* REVISI: Ukuran font copyright lebih kecil */
+footer p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  #lang-switcher {
+    position: static;
+    margin: 0 auto 1em;
+    justify-content: center;
+  }
+}
+
 @media (min-width: 768px) {
   .service-card-container {
-    /* 2 kolom untuk tablet */
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
   .service-card-container {
-    /* 4 kolom untuk desktop besar */
     grid-template-columns: repeat(4, 1fr);
   }
 }
