@@ -25,10 +25,6 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  margin-top: 0;
-}
-
 .service-card {
   background-color: #fff;
   padding: 1em;
@@ -42,11 +38,30 @@ h2 {
   margin-top: 0;
 }
 
-@media (max-width: 768px) {
-  main {
-    padding: 1em;
-  }
-  section {
-    margin-bottom: 0.5em;
-  }
+.read-more {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  background-color: #444;
+}
+
+.description {
+  display: none;
+  padding: 1em;
+  border-top: 1px solid #ddd;
+}
+
+.description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description li {
+  margin-bottom: 0.5em;
 }
