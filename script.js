@@ -1,11 +1,14 @@
-// Tambahkan animasi scroll ke section
-const sections = document.querySelectorAll('section');
+const readMoreButtons = document.querySelectorAll('.read-more');
 
-sections.forEach((section) => {
-  section.addEventListener('mouseover', () => {
-    section.style.transform = 'scale(1.05)';
-  });
-  section.addEventListener('mouseout', () => {
-    section.style.transform = 'scale(1)';
+readMoreButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const description = button.nextElementSibling;
+    if (description.style.display === 'block') {
+      description.style.display = 'none';
+      button.textContent = 'Baca Selengkapnya';
+    } else {
+      description.style.display = 'block';
+      button.textContent = 'Tutup';
+    }
   });
 });
